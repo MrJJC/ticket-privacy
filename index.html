@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>遊戲設計工單系統 — 隱私權政策</title>
+<style>
+  :root {
+    --bg: #ffffff; --fg: #1f2328; --muted: #656d76;
+    --border: #d8dee4; --accent: #0969da; --card: #f6f8fa;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0d1117; --fg: #e6edf3; --muted: #9198a1;
+      --border: #30363d; --accent: #4493f8; --card: #161b22;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 2.5rem 1.25rem 5rem;
+    background: var(--bg); color: var(--fg);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC",
+                 "PingFang TC", "Microsoft JhengHei", sans-serif;
+    line-height: 1.75; font-size: 16px;
+  }
+  main { max-width: 46rem; margin: 0 auto; }
+  h1 { font-size: 1.75rem; line-height: 1.3; margin: 0 0 .5rem; }
+  h2 {
+    font-size: 1.2rem; margin: 2.5rem 0 .75rem;
+    padding-bottom: .35rem; border-bottom: 1px solid var(--border);
+  }
+  h3 { font-size: 1rem; margin: 1.5rem 0 .5rem; }
+  p, li { color: var(--fg); }
+  ul { padding-left: 1.35rem; }
+  li { margin: .35rem 0; }
+  .meta { color: var(--muted); font-size: .9rem; margin: 0 0 2rem; }
+  .callout {
+    background: var(--card); border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    border-radius: 6px; padding: 1rem 1.15rem; margin: 1.25rem 0;
+  }
+  .callout p:last-child { margin-bottom: 0; }
+  .callout p:first-child { margin-top: 0; }
+  table {
+    width: 100%; border-collapse: collapse; margin: 1rem 0;
+    font-size: .94rem; display: block; overflow-x: auto;
+  }
+  th, td { border: 1px solid var(--border); padding: .55rem .7rem; text-align: left; vertical-align: top; }
+  th { background: var(--card); font-weight: 600; white-space: nowrap; }
+  code {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 4px; padding: .1rem .35rem; font-size: .875em;
+  }
+  a { color: var(--accent); }
+  footer {
+    margin-top: 3.5rem; padding-top: 1.25rem;
+    border-top: 1px solid var(--border); color: var(--muted); font-size: .9rem;
+  }
+</style>
+</head>
+<body>
+<main>
+
+<h1>遊戲設計工單系統 — 隱私權政策</h1>
+<p class="meta">
+  最後更新：2026-08-17　｜
+  適用對象：本 Chrome 擴充功能（「遊戲設計工單系統」）之使用者
+</p>
+
+<div class="callout">
+  <p><strong>一句話總結：</strong>本擴充功能是Garena內部使用的設計工單工具。
+  它只在你主動開啟時讀取你指定的那一份 Google 簡報內容，用來自動填寫工單表單；
+  除此之外不收集任何瀏覽資料、不做使用者追蹤、不販售任何資料。</p>
+</div>
+
+<h2>1. 本擴充功能會處理哪些資料</h2>
+
+<table>
+  <thead>
+    <tr><th>資料類別</th><th>內容</th><th>用途</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>身分識別資訊</td>
+      <td>你的 Google 帳號電子郵件地址</td>
+      <td>確認你在授權名單內、標記工單開單人、寄送工單通知信</td>
+    </tr>
+    <tr>
+      <td>簡報內容</td>
+      <td>你主動開啟本工具時，該份 Google 簡報的<strong>文字內容</strong>與頁面結構</td>
+      <td>自動解析工單需求（尺寸、截止日、製作項目），預先填入表單</td>
+    </tr>
+    <tr>
+      <td>工單表單資料</td>
+      <td>你在側邊欄填寫或確認的工單內容（標題、遊戲別、數量、截止日、備註等）</td>
+      <td>建立工單紀錄並寄出通知信</td>
+    </tr>
+    <tr>
+      <td>本機暫存資料</td>
+      <td>未送出的工單草稿、上次選擇的遊戲別、範本檔案 ID</td>
+      <td>讓你關閉後能接續編輯；僅存在你自己的瀏覽器中</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>本擴充功能<strong>不會</strong>處理的資料</h3>
+<ul>
+  <li>不收集瀏覽紀錄、不追蹤你造訪過哪些網站</li>
+  <li>不使用任何第三方分析、追蹤或廣告服務</li>
+  <li>不收集密碼、付款資訊或其他敏感個人資料</li>
+  <li>不販售、不出租、不將資料用於與本工具無關的用途</li>
+</ul>
+
+<h2>2. 資料傳送到哪裡</h2>
+
+<h3>2.1 後端服務（Google Apps Script）</h3>
+<p>簡報文字與工單表單資料會傳送到Garena自行部署的
+Google Apps Script 後端，用於解析工單、寫入工單紀錄試算表、以及寄出通知信。
+該後端僅限<code>garena.com</code>網域帳號存取。</p>
+
+<h3>2.2 AI 解析服務</h3>
+<div class="callout">
+  <p><strong>請特別留意：</strong>為了自動判讀工單需求，<strong>簡報的文字內容會傳送給大型語言模型（LLM）</strong>進行解析。</p>
+  <p>傳送路徑如下，全程在Garena自有或簽約的服務之間進行，
+  <strong>不經過任何面向一般消費者的第三方 AI 服務</strong>：</p>
+  <ol>
+    <li>擴充功能 → Garena 內部中繼服務</li>
+    <li>中繼服務 → 公司內部 AI 閘道</li>
+    <li>由該閘道代為呼叫 Gemini 系列模型</li>
+  </ol>
+  <p>傳送的內容<strong>僅限簡報中的文字</strong>，不包含圖片，也不包含你的電子郵件地址或其他身分資訊
+  ——中繼請求的內容只有待解析的文字本身。</p>
+  <p>中繼服務只記錄「呼叫是否成功、耗時、使用的模型、token 數」等統計資訊，
+  <strong>不記錄簡報內容或工單內容</strong>。</p>
+  <p><strong>即便如此，仍請勿使用本工具處理含有機密或個人敏感資訊的簡報。</strong></p>
+</div>
+
+<h3>2.3 Google 服務</h3>
+<p>本擴充功能透過你授權的 Google 帳號存取下列 Google API：Google Slides API（讀取簡報內容、
+回寫工單編號）。工單紀錄寫入
+Garena的 Google 試算表，通知信透過 Gmail 寄出。</p>
+
+<h2>3. 權限說明</h2>
+
+<table>
+  <thead>
+    <tr><th>權限</th><th>為什麼需要</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><code>identity</code></td><td>使用 Google 帳號登入，取得你的電子郵件以確認授權身分</td></tr>
+    <tr><td><code>sidePanel</code></td><td>顯示工單填寫介面</td></tr>
+    <tr><td><code>storage</code></td><td>在你自己的瀏覽器中儲存未送出的草稿與偏好設定</td></tr>
+    <tr><td><code>tabs</code> / <code>activeTab</code></td><td>判斷目前分頁是否為 Google 簡報，並取得該簡報網址</td></tr>
+    <tr><td><code>scripting</code></td><td>你主動點擊擴充功能圖示時，在該分頁顯示工具列按鈕（只建立按鈕，不讀取網頁內容）</td></tr>
+    <tr><td>存取 <code>docs.google.com/presentation</code></td><td>在 Google 簡報頁面上預先顯示工具列按鈕</td></tr>
+    <tr><td>存取 <code>googleapis.com</code>、<code>script.google.com</code>、<code>script.googleusercontent.com</code></td><td>呼叫 Google API 與後端服務（後者是 Apps Script 回應內容的實際來源網域）</td></tr>
+    <tr><td>存取 <code>*.ingarena.net</code></td><td>將待解析的簡報文字送到Garena的內部 AI 中繼服務（見 2.2）</td></tr>
+  </tbody>
+</table>
+
+<h3>Google 帳號授權範圍（OAuth Scopes）</h3>
+<table>
+  <thead>
+    <tr><th>範圍</th><th>用途</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>userinfo.email</code></td>
+      <td>取得你的電子郵件地址，確認你在授權名單內並標記開單人</td>
+    </tr>
+    <tr>
+      <td><code>presentations</code></td>
+      <td>讀取你指定簡報的文字內容以解析工單；工單建立後將工單編號回寫到簡報上</td>
+    </tr>
+  </tbody>
+</table>
+<p>本擴充功能<strong>不要求任何 Google Drive 授權範圍</strong>。「建立版型簡報」是開啟
+Google 自己的「建立副本」頁面，由你在該頁面上確認，過程不經過本擴充功能。</p>
+
+<h2>4. 資料保存與刪除</h2>
+<ul>
+  <li><strong>本機草稿：</strong>存放在你自己的瀏覽器中，超過 24 小時自動失效；
+      移除本擴充功能即一併清除。</li>
+  <li><strong>工單紀錄：</strong>保存在Garena的 Google 試算表中，
+      作為工作紀錄依內部規範保存。</li>
+  <li><strong>傳送給 AI 解析的內容：</strong>中繼服務不留存簡報或工單內容（僅留呼叫統計）；
+      AI 閘道端依Garena內部規範處理。本工具不另行留存。</li>
+  <li>如需查詢或刪除你的相關工單紀錄，請聯絡下方窗口。</li>
+</ul>
+
+<h2>5. 資料安全</h2>
+<ul>
+  <li>所有連線均使用 HTTPS 加密傳輸。</li>
+  <li>後端服務僅限<code>garena.com</code>網域帳號存取，且使用者須在授權名單內。</li>
+  <li>本擴充功能不儲存你的 Google 密碼；登入完全交由 Google 官方 OAuth 流程處理。</li>
+  <li>API 金鑰等機密設定存放於後端，不隨擴充功能發布。</li>
+</ul>
+
+<h2>6. 變更本政策</h2>
+<p>本政策如有修改，將更新本頁面頂端的「最後更新」日期。重大變更會另行通知使用者。</p>
+
+<h2>7. 聯絡方式</h2>
+<p>對本政策或資料處理方式有任何疑問，請聯絡：<br>
+JJC ／ Creative Team TW　<a href="mailto:jenj@garena.com">jenj@garena.com</a></p>
+
+<footer>
+  本擴充功能為Garena內部工具，僅供獲授權之人員使用。<br>
+  © 2026 Garena. All rights reserved.
+</footer>
+
+</main>
+</body>
+</html>
