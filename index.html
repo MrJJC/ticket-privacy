@@ -161,7 +161,7 @@
     </p>
 
     <div class="callout">
-      <p><strong>一句話總結：</strong>本擴充功能是Garena內部使用的設計工單工具。
+      <p><strong>一句話總結：</strong>本擴充功能是企業內部使用的設計工單工具。
         它只在你主動開啟時讀取你指定的那一份 Google 簡報內容，用來自動填寫工單表單；
         除此之外不收集任何瀏覽資料、不做使用者追蹤、不販售任何資料。</p>
     </div>
@@ -217,18 +217,18 @@
     <h2>2. 資料傳送到哪裡</h2>
 
     <h3>2.1 後端服務（Google Apps Script）</h3>
-    <p>簡報文字與工單表單資料會傳送到Garena自行部署的
+    <p>簡報文字與工單表單資料會傳送到本工具所屬企業自行部署的
       Google Apps Script 後端，用於解析工單、寫入工單紀錄試算表、以及寄出通知信。
-      該後端僅限<code>garena.com</code>網域帳號存取。</p>
+      該後端僅限所屬企業的網域帳號存取。</p>
 
     <h3>2.2 AI 解析服務</h3>
     <div class="callout">
       <p><strong>請特別留意：</strong>為了自動判讀工單需求，<strong>簡報的文字內容會傳送給大型語言模型（LLM）</strong>進行解析。</p>
-      <p>傳送路徑如下，全程在Garena自有或簽約的服務之間進行，
+      <p>傳送路徑如下，全程在所屬企業自有或簽約的服務之間進行，
         <strong>不經過任何面向一般消費者的第三方 AI 服務</strong>：
       </p>
       <ol>
-        <li>擴充功能 → Garena 內部中繼服務</li>
+        <li>擴充功能 → 企業內部中繼服務</li>
         <li>中繼服務 → 公司內部 AI 閘道</li>
         <li>由該閘道代為呼叫 Gemini 系列模型</li>
       </ol>
@@ -243,7 +243,7 @@
     <h3>2.3 Google 服務</h3>
     <p>本擴充功能透過你授權的 Google 帳號存取下列 Google API：Google Slides API（讀取簡報內容、
       回寫工單編號）。工單紀錄寫入
-      Garena的 Google 試算表，通知信透過 Gmail 寄出。</p>
+      該企業的 Google 試算表，通知信透過 Gmail 寄出。</p>
 
     <h2>3. 權限說明</h2>
 
@@ -285,8 +285,9 @@
           <td>呼叫 Google API 與後端服務（後者是 Apps Script 回應內容的實際來源網域）</td>
         </tr>
         <tr>
-          <td>存取 <code>*.ingarena.net</code></td>
-          <td>將待解析的簡報文字送到Garena的內部 AI 中繼服務（見 2.2）</td>
+          <td>存取企業內部服務網域</td>
+          <td>將待解析的簡報文字送到企業內部的 AI 中繼服務（見 2.2）；
+            確切主機於本擴充功能的 <code>manifest.json</code> 中宣告</td>
         </tr>
       </tbody>
     </table>
@@ -317,11 +318,11 @@
     <ul>
       <li><strong>本機草稿：</strong>存放在你自己的瀏覽器中，超過 24 小時自動失效；
         移除本擴充功能即一併清除。</li>
-      <li><strong>工單紀錄：</strong>保存在Garena的 Google 試算表中，
+      <li><strong>工單紀錄：</strong>保存在該企業的 Google 試算表中，
         作為工作紀錄依內部規範保存。</li>
       <li><strong>傳送給 AI 解析的內容：</strong>中繼服務不留存簡報或工單內容（僅留呼叫統計）；
-        AI 閘道端依Garena內部規範處理。本工具不另行留存。</li>
-      <li><strong>判讀回報：</strong>與工單紀錄存放在同一份Garena的 Google 試算表（獨立分頁），
+        AI 閘道端依該企業內部規範處理。本工具不另行留存。</li>
+      <li><strong>判讀回報：</strong>與工單紀錄存放在同一份企業 Google 試算表（獨立分頁），
         保留最新 500 筆，超過時由管理者手動清理最舊的紀錄。回報內容<strong>不會傳送給 AI 服務</strong>。</li>
       <li>如需查詢或刪除你的相關工單紀錄，請聯絡下方窗口。</li>
     </ul>
@@ -329,7 +330,7 @@
     <h2>5. 資料安全</h2>
     <ul>
       <li>所有連線均使用 HTTPS 加密傳輸。</li>
-      <li>後端服務僅限<code>garena.com</code>網域帳號存取，且使用者須在授權名單內。</li>
+      <li>後端服務僅限所屬企業的網域帳號存取，且使用者須在授權名單內。</li>
       <li>本擴充功能不儲存你的 Google 密碼；登入完全交由 Google 官方 OAuth 流程處理。</li>
       <li>API 金鑰等機密設定存放於後端，不隨擴充功能發布。</li>
     </ul>
@@ -339,11 +340,10 @@
 
     <h2>7. 聯絡方式</h2>
     <p>對本政策或資料處理方式有任何疑問，請聯絡：<br>
-      JJC ／ Creative Team TW　<a href="mailto:jenj@garena.com">jenj@garena.com</a></p>
+      本工具的維運窗口（聯絡方式於企業內部管道公告）</p>
 
     <footer>
-      本擴充功能為Garena內部工具，僅供獲授權之人員使用。<br>
-      © 2026 Garena. All rights reserved.
+      本擴充功能為企業內部工具，不公開發布，僅供獲授權之人員使用。
     </footer>
 
   </main>
