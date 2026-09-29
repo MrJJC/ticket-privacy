@@ -156,7 +156,7 @@
 
     <h1>遊戲設計工單系統 — 隱私權政策</h1>
     <p class="meta">
-      最後更新：2026-08-20　｜
+      最後更新：2026-09-29　｜
       適用對象：本 Chrome 擴充功能（「設計工單系統」）之使用者
     </p>
 
@@ -309,10 +309,25 @@
           <td><code>presentations</code></td>
           <td>讀取你指定簡報的文字內容以解析工單；工單建立後將工單編號回寫到簡報上</td>
         </tr>
+        <tr>
+          <td><code>gmail.send</code></td>
+          <td>以你本人的身分寄出工單通知信與取消通知，設計師回信才回得到你。
+            <strong>只能寄、不能讀</strong>——本擴充功能未要求任何讀取信件的範圍</td>
+        </tr>
+        <tr>
+          <td><code>drive.readonly</code></td>
+          <td>「建立版型」時讀取共用的工單範本簡報，才能複製一份給你</td>
+        </tr>
+        <tr>
+          <td><code>drive.file</code></td>
+          <td>把複製出來的版型簡報建立到你自己的雲端硬碟</td>
+        </tr>
       </tbody>
     </table>
-    <p>本擴充功能<strong>不要求任何 Google Drive 授權範圍</strong>。「建立版型簡報」是開啟
-      Google 自己的「建立副本」頁面，由你在該頁面上確認，過程不經過本擴充功能。</p>
+    <p>關於 Drive 範圍：<code>drive.file</code> 只涵蓋<strong>本擴充功能自己建立的檔案</strong>；
+      <code>drive.readonly</code> 用來讀取那份共用的版型範本（它不是本擴充功能建立的，
+      <code>drive.file</code> 涵蓋不到）。本擴充功能<strong>不會列出、瀏覽或修改你雲端硬碟裡的
+      其他檔案</strong>，也不會把任何檔案分享給他人。</p>
 
     <h2>4. 資料保存與刪除</h2>
     <ul>
